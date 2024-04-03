@@ -1,0 +1,15 @@
+{"publicacion":[
+    {
+        "id":1,
+        "descripcion":"Primer Descripcion",
+        "fecha": "05-04-2024",
+        "color": "blue"
+    },
+    {
+        "id":2,
+        "descripcion":"Segunda Descripcion",
+        "fecha": "08-04-2024",
+        "color": "blue"
+    }
+    ]
+}
