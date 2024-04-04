@@ -5,7 +5,7 @@ const app = express();
 
 const leerDatos = () => {
     try{
-        const datos = fs.readFileSync("./src/db.json");
+        const datos = fs.readFileSync("./src/database/db.json");
         return JSON.parse(datos);
     }
     catch(error){
@@ -15,7 +15,7 @@ const leerDatos = () => {
 
 const crearDatos = (datos) => {
     try{
-        fs.writeFileSync("./src/db.json", JSON.stringify(datos));
+        fs.writeFileSync("./src/database/db.json", JSON.stringify(datos));
     }
     catch(error){
         console.log(error)
