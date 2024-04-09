@@ -23,13 +23,13 @@ const crearDatos = (datos) => {
 };
 
 
-app.get("/", (req, res) => {
-    res.send("Bienvenido!");
-});
+// app.get("/", (req, res) => {
+//     res.send("Bienvenido!");
+// });
 
 app.get("/publicaciones", (req, res) => {
     const datos = leerDatos();
-    res.json(datos.publicacion)
+    res.json(datos.publicacion);
 });
 
 app.get("/publicaciones/:id", (req, res) => {
