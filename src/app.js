@@ -1,29 +1,26 @@
 import dotenv from "dotenv";
 import express from "express";
 import bodyParser from "body-parser";
-// rutas
-import controladorRutas from "./controladores/controlador.js"
+import cors from "cors";
+
+import controladorRutas from "./rutas/rutas.js"
 
 const app = express();
-app.use(bodyParser.json());
 
-// enable cors
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+app.use(cors())
+
+app.use(bodyParser.json());
 
 // configuracion
 dotenv.config();
-const PORT = process.env.PORT;
-app.set("port", PORT);
+
+app.set("port", process.env.PORT);
+app.set("mongo_uri", process.env.MONGO_URI);
 
 // middlewares
 app.use(express.json());
 
 // rutas
-app.use("/", controladorRutas);
+app.use("/publicaciones", controladorRutas);
 
 export default app;
