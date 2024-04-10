@@ -8,9 +8,6 @@ const publicaciones = mongoose.Schema(
         fecha: {
             type: String
         },
-        indice: {
-            type: String
-        },
         created_at: {
             type: Date
         }

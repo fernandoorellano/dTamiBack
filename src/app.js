@@ -20,6 +20,10 @@ app.set("mongo_uri", process.env.MONGO_URI);
 // middlewares
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Bienvenido");
+});
+
 // rutas
 app.use("/publicaciones", controladorRutas);
 
